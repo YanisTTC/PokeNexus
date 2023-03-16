@@ -1,40 +1,112 @@
 .pokemon-guessing {
-  margin: 50px auto;
-  max-width: 400px;
   text-align: center;
-  font-family: Arial, sans-serif;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.guess {
-  margin-top: 20px;
+.pokemon-image-container {
+  margin-bottom: 20px;
 }
 
-.guess input {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
+.pokemon-image {
+  width: 400px;
+  height: 400px;
+}
+
+.guess-container {
+  margin-bottom: 20px;
+}
+
+.guess-input {
+  font-size: 20px;
+  padding: 5px;
   border-radius: 5px;
-  background-color: #eee;
+  border: none;
+  box-shadow: 0px 0px 5px #ccc;
   margin-right: 10px;
-  width: 60%;
+  width: 200px;
 }
 
-.guess button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
+.submit-button, .skip-button {
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px 20px;
   border-radius: 5px;
-  background-color: #4285f4;
-  color: #fff;
+  border: none;
+  box-shadow: 0px 0px 5px #ccc;
+  background-color: #3F51B5;
+  color: white;
   cursor: pointer;
 }
 
-.result {
+.skip-button {
+  background-color: #FF5722;
+}
+
+.result-container {
   margin-top: 20px;
+}
+
+.correct-message, .incorrect-message {
   font-size: 20px;
 }
- 
 
-img {
-  width: 400px;
-}  
+.next-button {
+  margin-top: 10px;
+}
+.pokemon-details {
+  margin-top: 20px;
+}
+
+.nom {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stats-and-types {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+.stats li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.types {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.types li {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+  background-color: #cccccc;
+}
+
+.types img {
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+}
+

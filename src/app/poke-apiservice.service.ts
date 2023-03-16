@@ -15,7 +15,7 @@ interface PokemonData {
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl = 'https://pokeapi.co/api/v2';
+  private apiUrl = 'https://pokebuildapi.fr/api/v1';
 
   constructor(private http: HttpClient) {}
 

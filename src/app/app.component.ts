@@ -24,11 +24,17 @@ export class AppComponent implements OnInit {
   }
 
   checkGuess() {
-    if (this.guess.toLowerCase() === this.pokemon.name.toLowerCase()) {
+    const guessWithoutAccents = this.removeAccents(this.guess.toLowerCase());
+    const pokemonNameWithoutAccents = this.removeAccents(this.pokemon.name.toLowerCase());
+    if (guessWithoutAccents === pokemonNameWithoutAccents) {
       this.isCorrect = true;
     } else {
       this.isCorrect = false;
     }
+  }
+  
+  removeAccents(str: string): string {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
   nextPokemon() {
