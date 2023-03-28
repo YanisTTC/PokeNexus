@@ -1,44 +1,79 @@
-<div class="pokemon-guessing">
+<header>
 
-  <h2>Devinez le nom de ce Pokémon :</h2>
+  <nav>
+    <div class="nav-logo">
+      <a href="/"><img src="../assets/logo.png" alt="Logo de PokeNexus" class="logo"></a>
+    </div>
+
+    <div class="nav-links">
+      <ul>
+        <a href="/"><li class="devine">Devine un pokémon</li></a>
+        <li class="pokedex">Pokédex (prochainement)</li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+
+<main>
+
+  <h2>Qui est ce Pokémon ?</h2>
 
   <div class="pokemon-image-container">
-    <img src="{{pokemon.image}}" alt="Image du Pokémon" class="pokemon-image">
+    <img src="{{pokemon.image}}" alt="Image du Pokémon" class="pokemon-image" [ngClass]="{'filter-off': isCorrect}" draggable="false">
   </div>
 
-  <div class="guess-container">
-    <input type="text" [(ngModel)]="guess" placeholder="Entrez le nom ici" class="guess-input" (keyup.enter)="checkGuess()">
-    <button (click)="checkGuess()" class="submit-button">Soumettre</button>
-    <button (click)="nextPokemon()" class="skip-button">Je ne sais pas</button>
-  </div>
+  <div class="pokemon-guessing">
 
-  <div class="result-container" *ngIf="isCorrect">
-
-    <button (click)="nextPokemon()" class="next-button" >Suivant</button>
-    
-    <div class="pokemon-details">
-      <p class="nom">{{pokemon.name}}</p>
-      <div class="stats-and-types">
-        <ul class="stats">
-          <li>HP: {{pokemon.stats.HP}}</li>
-          <li>Attaque: {{pokemon.stats.attack}}</li>
-          <li>Défense: {{pokemon.stats.defense}}</li>
-          <li>Attaque Spéciale: {{pokemon.stats.special_attack}}</li>
-          <li>Défense Spéciale: {{pokemon.stats.special_defense}}</li>
-          <li>Vitesse: {{pokemon.stats.speed}}</li>
-        </ul>
-        <ul class="types">
-          <li *ngFor="let type of pokemon.apiTypes">
-            <img src="{{type.image}}" alt="{{type.name}}">{{type.name}}
-          </li>
-        </ul>
+    <div class="guess-container">
+      
+      <div>
+        <input type="text" [(ngModel)]="guess" placeholder="Nom du pokémon..." class="guess-input"
+        (keyup.enter)="checkGuess()">
       </div>
+
+      <div class="action-button">
+        <button (click)="checkGuess()" class="submit-button">Soumettre</button>
+        <button (click)="nextPokemon()" class="skip-button">Je ne sais pas</button>
+      </div>
+      </div>
+
+    <div class="result-container" *ngIf="isCorrect">
+
+      <div class="action-button">
+        <button (click)="nextPokemon()" class="submit-button">Suivant</button>
+      </div>
+
+      <div class="pokemon-details">
+        <p class="nom">{{pokemon.name}}</p>
+        <div class="stats-and-types">
+          <ul class="stats">
+            <li>HP: {{pokemon.stats.HP}}</li>
+            <li>Attaque: {{pokemon.stats.attack}}</li>
+            <li>Défense: {{pokemon.stats.defense}}</li>
+            <li>Attaque Spéciale: {{pokemon.stats.special_attack}}</li>
+            <li>Défense Spéciale: {{pokemon.stats.special_defense}}</li>
+            <li>Vitesse: {{pokemon.stats.speed}}</li>
+          </ul>
+
+          <ul class="types">
+            <li *ngFor="let type of pokemon.apiTypes">
+              <img src="{{type.image}}" alt="{{type.name}}">{{type.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-    
+
+    <div class="result-container" *ngIf="!isCorrect">
+      <p class="incorrect-message">Désolé, essayez encore !</p>
+    </div>
+
   </div>
 
-  <div class="result-container" *ngIf="!isCorrect">
-    <p class="incorrect-message">Désolé, essayez encore !</p>
-  </div> 
-  
-</div>
+</main>
+
+<footer>
+
+</footer>

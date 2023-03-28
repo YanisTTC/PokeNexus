@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  width: 80%;
+  background-color: #212529;
+  color: white;
+}
+
+header {
+  
+}
+
+.logo {
+  width: 16rem;
+  margin-top: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li {
+  padding: 10px;
+  border-radius: 50px;
+  font-weight: 400;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+}
+
+
+.devine {
+  background-color: #40916c;
+}
+
+.nav-links {
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  
+}
+
+h2 {
+  text-align: center;
+}
+

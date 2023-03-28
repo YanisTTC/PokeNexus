@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     const pokemonNameWithoutAccents = this.removeAccents(this.pokemon.name.toLowerCase());
     if (guessWithoutAccents === pokemonNameWithoutAccents) {
       this.isCorrect = true;
+      
     } else {
       this.isCorrect = false;
     }
